@@ -1,6 +1,6 @@
 function typeWriter(element, text, i, fnCallback) {
   if (i < text.length) {
-    document.getElementById(element).textContent = text.substring(0, i + 1);
+    document.getElementById(element).innerHTML = text.substring(0, i + 1);
 
     setTimeout(function () {
       typeWriter(element, text, i + 1, fnCallback);
@@ -12,7 +12,7 @@ function typeWriter(element, text, i, fnCallback) {
 
 function deleteWriter(element, text, i, fnCallback) {
   if (i >= 0) {
-    document.getElementById(element).textContent = text.substring(0, i);
+    document.getElementById(element).innerHTML = text.substring(0, i);
 
     setTimeout(function () {
       deleteWriter(element, text, i - 1, fnCallback);
@@ -24,11 +24,18 @@ function deleteWriter(element, text, i, fnCallback) {
 
 function StartTextAnimation() {
   var text = "Hi, friend!";
-  typeWriter("dynamic-title", text, 0, function () {
-    deleteWriter("dynamic-title", text, text.length, StartTextAnimation);
-  });
+
+  setTimeout(function () {
+    typeWriter("dynamic-title", text, 0, function () {
+      setTimeout(function () {
+        deleteWriter("dynamic-title", text, text.length, StartTextAnimation);
+      }, 2000);
+    });
+  }, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  StartTextAnimation();
+  document.getElementById("dynamic-title").innerHTML = "Hi, friend!";
+
+  setTimeout(StartTextAnimation, 1500);
 });

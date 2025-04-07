@@ -15,6 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&family=Roboto:wght@500&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./js/particles.js"></script>
   </head>
 
   <body>
@@ -22,7 +27,7 @@
       <header>
         <a href="#main-container" class="logo-link">
           <div class="logo-circle">A</div>
-          <div class="logo-content inside-link inside-link">Avi Kaufman</div>
+          <div class="logo-content inside-link">Avi Kaufman</div>
         </a>
         <button class="menu-btn">☰</button>
         <script src="./js/openMenu.js"></script>
@@ -40,15 +45,24 @@
       </header>
       <main>
         <div id="home" class="page">
-          <h2 id="dynamic-title">Hi, friend!</h2>
-          <script src="./js/dynamicTitle.js"></script>
-          <div class="page-content">
-            <p class="welcome-message">
-              I'm Avi Kaufman, a full-stack developer and tech explorer. Happy
-              to see you here - let's embark on a journey through my digital
-              world together!
-            </p>
+          <div class="hero-content">
+            <h2 id="dynamic-title">Hi, friend!</h2>
+            <script src="./js/dynamicTitle.js"></script>
+            <div class="page-content">
+              <p class="welcome-message">
+                I'm Avi Kaufman, a full-stack developer and tech explorer. Happy
+                to see you here - let's embark on a journey through my digital
+                world together!
+              </p>
+              <div class="hero-buttons">
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#contactMe" class="cta-button secondary"
+                  >Get in Touch</a
+                >
+              </div>
+            </div>
           </div>
+          <div id="particles-js"></div>
         </div>
         <div id="aboutMe" class="page">
           <div class="page-content about">
